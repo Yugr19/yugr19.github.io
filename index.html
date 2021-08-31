@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>测试</title>
+	<link rel="stylesheet" href="/css/common.css"/>
+	<style>
+		body {
+			background: #000;
+			text-align: center;
+			color: rgba(179, 73, 73, 0.5);
+			font-family: KaiTi;
+			/* font-size: 5rem; */
+			font-size: 1rem;
+		}
+		#pass {
+			display: none;
+		}
+	</style>
+	<script src="https://static.lcwebsite.cn/js/timer/class.js"></script>
+</head>
+
+<body>
+	<h1>测试测试！</h1>
+	<code>let test = "测试";
+console.log("这是" + test + "代码段！");</code>
+	<div>
+		<span id="last">距离北京时间2100年1月1日0时0分0秒还有</span>
+		<span id="pass">从北京时间2100年1月1日0时0分0秒已经过去</span>
+		<span id="timer">---</span>
+		<span>！</span>
+	</div>
+	<div>特别说明：此值根据您的设备时间计算！</div>
+	<!-- <a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
+	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a> -->
+	<!-- <a href="https://lcwebsite.cn/" target="_blank"><img src="media/image/屏幕截图(4).png" alt="屏幕截图"/></a> -->
+	<!-- <audio src="https://static.lcwebsite.cn/media/audio/bgm.mp3" controls preload="metadata">很抱歉，您的浏览器不支持 Audio！</audio> -->
+	<!-- <audio src="media/audio/C400001S4VEx1isPxu.m4a" controls preload="metadata">很抱歉，您的浏览器不支持 Audio！</audio> -->
+	<!-- <img src="https://static.lcwebsite.cn/media/img/added.webp" alt="!"/> -->
+	<script>
+		const timer = new Timer("2100-01-01T00:00:00+08:00");
+		function refresh(timer) {
+			const result = timer.timing(),
+				element = document.querySelector("#timer"),
+				last = document.querySelector("#last"),
+				pass = document.querySelector("#pass");
+			if (result.countdown) {
+				last.style.display = "inline";
+				pass.style.display = "none";
+			} else {
+				last.style.display = "none";
+				pass.style.display = "inline";
+			}
+			element.innerHTML = result.days;
+				element.innerHTML += "天";
+				element.innerHTML += result.hours;
+				element.innerHTML += "时";
+				element.innerHTML += result.minutes;
+				element.innerHTML += "分";
+				element.innerHTML += result.seconds;
+				element.innerHTML += "秒";
+		}
+		const id = setInterval(refresh, 250, timer);
+	</script>
+</body>
+
+</html>
