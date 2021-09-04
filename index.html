@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="utf-8" />
-	<title>测试</title>
-	<link rel="stylesheet" href="/css/common.css"/>
-	<style>
-		body {
-			background: #000;
-			text-align: center;
-			color: rgba(179, 73, 73, 0.5);
-			font-family: KaiTi;
-			/* font-size: 5rem; */
-			font-size: 1rem;
-		}
-		#pass {
-			display: none;
-		}
-	</style>
-	<script src="https://static.lcwebsite.cn/js/timer/class.js"></script>
+<title>ygr网站</title>
+<meta charset="utf-8">
+<style>
+  ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#333;
+  }
+  
+  li{
+    float:left;
+  }
+  
+  li a, .dropbtn
+  {
+    display:inline-block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+  }
+  
+  li a:hover, .dropdown:hover, .dropbtn
+  {
+    background-color:#111;
+  }
+  
+  .dropdown
+  {
+    display:inline-block;
+  }
+  
+  .dropdown-content
+  {
+    display:none;
+    position:absolute;
+    background-color:#f9f9f9;
+    min-width:160px;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a
+  {
+    color:black;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content
+  {
+    display:block;
+  }
+  
+  </style>
 </head>
-
 <body>
-	<h1>测试测试！</h1>
-	<code>let test = "测试";
-console.log("这是" + test + "代码段！");</code>
-	<div>
-		<span id="last">距离北京时间2100年1月1日0时0分0秒还有</span>
-		<span id="pass">从北京时间2100年1月1日0时0分0秒已经过去</span>
-		<span id="timer">---</span>
-		<span>！</span>
-	</div>
-	<div>特别说明：此值根据您的设备时间计算！</div>
-	<!-- <a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a>
-	<a href="https://lcwebsite.cn/" target="_blank">访问LC的网站</a> -->
-	<!-- <a href="https://lcwebsite.cn/" target="_blank"><img src="media/image/屏幕截图(4).png" alt="屏幕截图"/></a> -->
-	<!-- <audio src="https://static.lcwebsite.cn/media/audio/bgm.mp3" controls preload="metadata">很抱歉，您的浏览器不支持 Audio！</audio> -->
-	<!-- <audio src="media/audio/C400001S4VEx1isPxu.m4a" controls preload="metadata">很抱歉，您的浏览器不支持 Audio！</audio> -->
-	<!-- <img src="https://static.lcwebsite.cn/media/img/added.webp" alt="!"/> -->
-	<script>
-		const timer = new Timer("2100-01-01T00:00:00+08:00");
-		function refresh(timer) {
-			const result = timer.timing(),
-				element = document.querySelector("#timer"),
-				last = document.querySelector("#last"),
-				pass = document.querySelector("#pass");
-			if (result.countdown) {
-				last.style.display = "inline";
-				pass.style.display = "none";
-			} else {
-				last.style.display = "none";
-				pass.style.display = "inline";
-			}
-			element.innerHTML = result.days;
-				element.innerHTML += "天";
-				element.innerHTML += result.hours;
-				element.innerHTML += "时";
-				element.innerHTML += result.minutes;
-				element.innerHTML += "分";
-				element.innerHTML += result.seconds;
-				element.innerHTML += "秒";
-		}
-		const id = setInterval(refresh, 250, timer);
-	</script>
-</body>
 
+<ul>
+  <li><a class="active" href="#home">主页</a></li>
+  <li><a href="#news">关于</a></li>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">联系方式</a>
+    <div class="dropdown-content">
+      <a href="https://wpa.qq.com/msgrd?v=3&uin=1709894447&site=qq&menu=yes">QQ</a>
+      <a href="#">链接 2</a>
+      <a href="#">链接 3</a>
+    </div>
+  </div>
+</ul>
+
+<h3>欢迎来到ygr的网站</h3>
+<p>网站目前在维护中</p>
+
+</body>
 </html>
